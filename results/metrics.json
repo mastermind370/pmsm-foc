@@ -1,0 +1,79 @@
+{
+  "meta": {
+    "generated_utc": "2026-11-15T22:03:06+00:00",
+    "git_commit": "6ffb6a8",
+    "python": "3.11.18",
+    "numpy": "2.4.6",
+    "machine": "arm64",
+    "wall_time_s": 1.2,
+    "plant_step_s": 1e-06,
+    "pwm_period_s": 0.0001,
+    "speed_loop_period_s": 0.001,
+    "log_sample_s": 0.0001,
+    "settling_band": 0.02,
+    "motor": {
+      "Rs": 0.5,
+      "Ld": 0.0014,
+      "Lq": 0.0014,
+      "psi_f": 0.1,
+      "pole_pairs": 4,
+      "J": 0.0005,
+      "B": 0.0001,
+      "Vdc": 48.0
+    },
+    "current_loop": {
+      "bandwidth_hz": 200.0,
+      "zeta": 1.5,
+      "kp": 4.777875658030852,
+      "ki": 2210.791385844016
+    },
+    "speed_loop": {
+      "bandwidth_hz": 25.0,
+      "zeta": 1.0,
+      "kp": 0.2616327211324827,
+      "ki": 20.561675835602827,
+      "i_max_A": 10.0
+    },
+    "notes": "Ideal speed/current measurement; one-sample computation delay modeled; times resolved to the 100 us logging period (linear interpolation)."
+  },
+  "experiments": {
+    "torque_step": {
+      "description": "Torque step: iq* 0 -> 5 A (rotor locked)",
+      "metrics": {
+        "rise_time_ms": 0.26822245621341256,
+        "overshoot_pct": 6.847665096598421,
+        "settling_time_ms": 1.6000000000000207,
+        "steady_state_error": -0.000262550633446601,
+        "unit": "A",
+        "peak_abs_id_A": 2.3074844235214576e-16
+      }
+    },
+    "speed_step": {
+      "description": "Speed step: 0 -> 30 rad/s (286 rpm), no load",
+      "metrics": {
+        "rise_time_ms": 3.5170437935548042,
+        "overshoot_pct": 17.41906693719195,
+        "settling_time_ms": 32.100000000021446,
+        "steady_state_error": -7.105427357601002e-15,
+        "unit": "rad/s",
+        "peak_iq_ref_A": 7.848981633974481,
+        "peak_voltage_V": 27.712812920835976,
+        "voltage_limit_V": 27.71281292110204,
+        "peak_abs_id_A": 0.013871418160324162
+      }
+    },
+    "load_disturbance": {
+      "description": "Load disturbance: 2 N m step at 200 ms, speed ref 30 rad/s",
+      "metrics": {
+        "peak_deviation": -10.544065280915586,
+        "peak_deviation_pct": 35.14688426971862,
+        "time_of_peak_ms": 5.400000000184729,
+        "recovery_time_ms": 32.30000000021163,
+        "steady_state_error": 4.617817239704891e-11,
+        "unit": "rad/s",
+        "speed_just_before_load": 30.00000000002162,
+        "peak_iq_ref_after_load_A": 3.9003036534320135
+      }
+    }
+  }
+}
