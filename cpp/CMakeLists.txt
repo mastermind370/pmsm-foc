@@ -26,3 +26,9 @@ enable_testing()
 add_executable(test_q15 tests/test_q15.cpp)
 target_link_libraries(test_q15 PRIVATE foc_q15)
 add_test(NAME test_q15 COMMAND test_q15)
+
+# Stage 6 tools: replay recorded vectors and time one control iteration.
+add_executable(replay_q15 tools/replay_q15.cpp)
+target_link_libraries(replay_q15 PRIVATE foc_q15)
+add_executable(bench_q15 tools/bench_q15.cpp)
+target_link_libraries(bench_q15 PRIVATE foc_q15)

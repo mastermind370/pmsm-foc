@@ -1,0 +1,220 @@
+{
+  "meta": {
+    "generated_utc": "2026-11-16T01:02:49+00:00",
+    "git_commit": "025ba85",
+    "python": "3.11.18",
+    "numpy": "2.4.6",
+    "machine": "arm64",
+    "cpu": "Apple M4",
+    "compiler": "Apple clang version 17.0.0 (clang-1700.0.13.5)",
+    "compile_flags": "-std=c++17 -O2 -Wall -Wextra",
+    "q15_gains_raw": "gains(raw): kp_d=14124 ki_d=5228 kaw_d=1516 c_ffd=1655 c_ffq=1655 c_bemf=5912 v_max=32767",
+    "lsb_volts": 0.0008457279333832409,
+    "bases": {
+      "I_A": 20.0,
+      "V_V": 27.71281292110204,
+      "W_rad_s": 400.0
+    },
+    "comparison_A": "Python float on dequantized Q15 inputs (controller error only)",
+    "comparison_B": "Python float on original float inputs (includes input quantization)",
+    "note": "Python limits at exactly 1.0 pu (32768 LSB), Q15 tops out at 32767: up to 1 LSB of error on limited steps is full-scale representation, not arithmetic."
+  },
+  "scenarios": {
+    "torque_step_locked": {
+      "steps": 2000,
+      "limited_steps": 36,
+      "limited_pct": 1.7999999999999998,
+      "clipped_input_samples": 0,
+      "A_all": {
+        "n_steps": 2000,
+        "max_lsb": 1.2149677341922143,
+        "rms_lsb": 0.298842233928542,
+        "max_mV": 1.0275321509657,
+        "rms_mV": 0.2527392249080168,
+        "max_pct_full_scale": 0.0037077872747565133
+      },
+      "A_linear": {
+        "n_steps": 1964,
+        "max_lsb": 1.2149677341922143,
+        "rms_lsb": 0.2859697489794436,
+        "max_mV": 1.0275321509657,
+        "rms_mV": 0.24185260481450901,
+        "max_pct_full_scale": 0.0037077872747565133
+      },
+      "A_limited": {
+        "n_steps": 36,
+        "max_lsb": 1.0,
+        "rms_lsb": 0.7071067811865476,
+        "max_mV": 0.8457279333832409,
+        "rms_mV": 0.5980199567341744,
+        "max_pct_full_scale": 0.0030517578125
+      },
+      "B_all": {
+        "n_steps": 2000,
+        "max_lsb": 3.579350894966865,
+        "rms_lsb": 0.8761582037479214,
+        "max_mV": 3.02715703525378,
+        "rms_mV": 0.7409914669725021,
+        "max_pct_full_scale": 0.010923312057393997
+      }
+    },
+    "speed_step_30": {
+      "steps": 3000,
+      "limited_steps": 3,
+      "limited_pct": 0.1,
+      "clipped_input_samples": 0,
+      "A_all": {
+        "n_steps": 3000,
+        "max_lsb": 1.9999660211797163,
+        "rms_lsb": 0.352197997058342,
+        "max_mV": 1.6914271299290244,
+        "rms_mV": 0.2978636841938683,
+        "max_pct_full_scale": 0.00610341192986974
+      },
+      "A_linear": {
+        "n_steps": 2997,
+        "max_lsb": 1.8076759289060647,
+        "rms_lsb": 0.35089341904635385,
+        "max_mV": 1.5288020275803564,
+        "rms_mV": 0.2967603661278524,
+        "max_pct_full_scale": 0.005516589138507277
+      },
+      "A_limited": {
+        "n_steps": 3,
+        "max_lsb": 1.9999660211797163,
+        "rms_lsb": 1.0199822515111838,
+        "max_mV": 1.6914271299290244,
+        "rms_mV": 0.8626274816581385,
+        "max_pct_full_scale": 0.00610341192986974
+      },
+      "B_all": {
+        "n_steps": 3000,
+        "max_lsb": 6.468904887176905,
+        "rms_lsb": 2.701244323991874,
+        "max_mV": 5.470933561484871,
+        "rms_mV": 2.2845177796928575,
+        "max_pct_full_scale": 0.01974153102776155
+      }
+    },
+    "load_step_2Nm": {
+      "steps": 4000,
+      "limited_steps": 3,
+      "limited_pct": 0.075,
+      "clipped_input_samples": 0,
+      "A_all": {
+        "n_steps": 4000,
+        "max_lsb": 1.9999660211797163,
+        "rms_lsb": 0.49566579875981415,
+        "max_mV": 1.6914271299290244,
+        "rms_mV": 0.419198411633891,
+        "max_pct_full_scale": 0.00610341192986974
+      },
+      "A_linear": {
+        "n_steps": 3997,
+        "max_lsb": 1.8076759289060647,
+        "rms_lsb": 0.4950637608537301,
+        "max_mV": 1.5288020275803564,
+        "rms_mV": 0.4186892513597602,
+        "max_pct_full_scale": 0.005516589138507277
+      },
+      "A_limited": {
+        "n_steps": 3,
+        "max_lsb": 1.9999660211797163,
+        "rms_lsb": 1.0199822515111838,
+        "max_mV": 1.6914271299290244,
+        "rms_mV": 0.8626274816581385,
+        "max_pct_full_scale": 0.00610341192986974
+      },
+      "B_all": {
+        "n_steps": 4000,
+        "max_lsb": 6.844034962376099,
+        "rms_lsb": 2.5549823054204923,
+        "max_mV": 5.788191544732986,
+        "rms_mV": 2.1608199049940215,
+        "max_pct_full_scale": 0.020886337165454405
+      }
+    },
+    "voltage_limited_reversal": {
+      "steps": 10000,
+      "limited_steps": 548,
+      "limited_pct": 5.48,
+      "clipped_input_samples": 0,
+      "A_all": {
+        "n_steps": 10000,
+        "max_lsb": 3.6286520212997857,
+        "rms_lsb": 1.177917943813922,
+        "max_mV": 3.0688523749407874,
+        "rms_mV": 0.9961981083167848,
+        "max_pct_full_scale": 0.011073767154845537
+      },
+      "A_linear": {
+        "n_steps": 9452,
+        "max_lsb": 3.6286520212997857,
+        "rms_lsb": 1.1740399562587462,
+        "max_mV": 3.0688523749407874,
+        "rms_mV": 0.99291838591606,
+        "max_pct_full_scale": 0.011073767154845537
+      },
+      "A_limited": {
+        "n_steps": 548,
+        "max_lsb": 2.0048259206341754,
+        "rms_lsb": 1.242903428770443,
+        "max_mV": 1.6955372826510946,
+        "rms_mV": 1.051158148208971,
+        "max_pct_full_scale": 0.00611824316599785
+      },
+      "B_all": {
+        "n_steps": 10000,
+        "max_lsb": 9.28299795955536,
+        "rms_lsb": 2.557146500066339,
+        "max_mV": 7.850890679935596,
+        "rms_mV": 2.1626502248592927,
+        "max_pct_full_scale": 0.028329461546494628
+      }
+    }
+  },
+  "aggregate": {
+    "A_all": {
+      "n_steps": 19000,
+      "max_lsb": 3.6286520212997857,
+      "rms_lsb": 0.9005375239495788,
+      "max_mV": 3.0688523749407874,
+      "rms_mV": 0.7616097390639381,
+      "max_pct_full_scale": 0.011073767154845537
+    },
+    "A_linear": {
+      "n_steps": 18410,
+      "max_lsb": 3.6286520212997857,
+      "rms_lsb": 0.8886266503823901,
+      "max_mV": 3.0688523749407874,
+      "rms_mV": 0.7515363805771705,
+      "max_pct_full_scale": 0.011073767154845537
+    },
+    "A_limited": {
+      "n_steps": 590,
+      "max_lsb": 2.0048259206341754,
+      "rms_lsb": 1.214877742458214,
+      "max_mV": 1.6955372826510946,
+      "rms_mV": 1.0274560424424826,
+      "max_pct_full_scale": 0.00611824316599785
+    },
+    "B_all": {
+      "n_steps": 19000,
+      "max_lsb": 9.28299795955536,
+      "rms_lsb": 2.459430717631377,
+      "max_mV": 7.850890679935596,
+      "rms_mV": 2.080009258121646,
+      "max_pct_full_scale": 0.028329461546494628
+    },
+    "steps": 19000,
+    "limited_steps": 590
+  },
+  "timing_one_iteration_ns": {
+    "vectors": 3000,
+    "iterations_per_rep": 1000000,
+    "reps": 15,
+    "ns_per_iter_min": 20.743,
+    "ns_per_iter_median": 20.775,
+    "ns_per_iter_max": 28.513
+  }
+}
